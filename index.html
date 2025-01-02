@@ -41,7 +41,11 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <section class="success d-flex flex-column" id="success">
+    <section
+      class="success d-flex flex-column"
+      id="success"
+      aria-label="Success Message"
+    >
       <header class="d-flex flex-row align-items-center">
         <img
           src="./assets/images/icon-success-check.svg"
@@ -59,7 +63,7 @@
         </header>
         <div class="name">
           <section class="d-flex flex-column">
-            <label for="firstName" class="label" aria-required="true"
+            <label for="firstName" class="label"
               >First Name<span class="required ms-2">*</span></label
             >
             <input
@@ -68,6 +72,7 @@
               id="firstName"
               autocomplete="name"
               class="input"
+              aria-required="true"
               aria-describedby="firstNameError"
               required
             />
@@ -76,7 +81,7 @@
             >
           </section>
           <section class="d-flex flex-column">
-            <label for="lastName" class="label" aria-required="true"
+            <label for="lastName" class="label"
               >Last Name<span class="required ms-2">*</span></label
             >
             <input
@@ -85,6 +90,7 @@
               id="lastName"
               autocomplete="name"
               class="input"
+              aria-required="true"
               aria-describedby="lastNameError"
               required
             />
@@ -94,7 +100,7 @@
           </section>
         </div>
         <section class="d-flex flex-column">
-          <label for="email" class="label" aria-required="true"
+          <label for="email" class="label"
             >Email Address<span class="required ms-2">*</span></label
           >
           <input
@@ -103,6 +109,7 @@
             id="email"
             autocomplete="email"
             class="input"
+            aria-required="true"
             aria-describedby="emailError"
             required
           />
@@ -129,7 +136,9 @@
                 />
                 <label for="generalEnquiry">General Enquiry</label>
               </section>
-              <section class="queryInput d-flex flex-row align-items-center mb-3">
+              <section
+                class="queryInput d-flex flex-row align-items-center mb-3"
+              >
                 <input
                   type="radio"
                   name="queryType"
@@ -148,13 +157,14 @@
         </div>
         <section>
           <fieldset class="d-flex flex-column">
-            <label for="message" class="label" aria-required="true"
+            <label for="message" class="label"
               >Message<span class="required ms-2">*</span></label
             >
             <textarea
               name="message"
               id="message"
               rows="8"
+              aria-required="true"
               aria-describedby="messageError"
               required
             ></textarea>
