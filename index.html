@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact us to get in touch with the team for inquiries or support requests."
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section class="success d-flex flex-column" id="success">
+      <header class="d-flex flex-row align-items-center">
+        <img
+          src="./assets/images/icon-success-check.svg"
+          alt="success checkmark icon"
+          class="me-2"
+        />
+        <h2>Message Sent!</h2>
+      </header>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </section>
+    <main class="container">
+      <form class="contactUs" id="contactUs">
+        <header>
+          <h1 class="title">Contact Us</h1>
+        </header>
+        <div class="name">
+          <section class="d-flex flex-column">
+            <label for="firstName" class="label" aria-required="true"
+              >First Name<span class="required ms-2">*</span></label
+            >
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              autocomplete="name"
+              class="input"
+              aria-describedby="firstNameError"
+              required
+            />
+            <span class="error" id="firstNameError" aria-live="assertive"
+              >This field is required</span
+            >
+          </section>
+          <section class="d-flex flex-column">
+            <label for="lastName" class="label" aria-required="true"
+              >Last Name<span class="required ms-2">*</span></label
+            >
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              autocomplete="name"
+              class="input"
+              aria-describedby="lastNameError"
+              required
+            />
+            <span class="error" id="lastNameError" aria-live="assertive"
+              >This field is required</span
+            >
+          </section>
+        </div>
+        <section class="d-flex flex-column">
+          <label for="email" class="label" aria-required="true"
+            >Email Address<span class="required ms-2">*</span></label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            class="input"
+            aria-describedby="emailError"
+            required
+          />
+          <span class="error" id="emailError" aria-live="assertive"
+            >Please enter a valid email address</span
+          >
+        </section>
+        <div class="queryInputs">
+          <fieldset>
+            <legend class="label">
+              Query Type<span class="required ms-2">*</span>
+            </legend>
+            <div class="queryTypes">
+              <section
+                class="queryInput d-flex flex-row align-items-center mb-3"
+              >
+                <input
+                  type="radio"
+                  name="queryType"
+                  id="generalEnquiry"
+                  class="mx-3"
+                  aria-describedby="queryInputError"
+                  required
+                />
+                <label for="generalEnquiry">General Enquiry</label>
+              </section>
+              <section class="queryInput d-flex flex-row align-items-center mb-3">
+                <input
+                  type="radio"
+                  name="queryType"
+                  id="supportRequest"
+                  class="mx-3"
+                  aria-describedby="queryInputError"
+                  required
+                />
+                <label for="supportRequest">Support Request</label>
+              </section>
+              <span class="error" id="queryInputError" aria-live="assertive"
+                >Please select a query type</span
+              >
+            </div>
+          </fieldset>
+        </div>
+        <section>
+          <fieldset class="d-flex flex-column">
+            <label for="message" class="label" aria-required="true"
+              >Message<span class="required ms-2">*</span></label
+            >
+            <textarea
+              name="message"
+              id="message"
+              rows="8"
+              aria-describedby="messageError"
+              required
+            ></textarea>
+            <span class="error" id="messageError" aria-live="assertive"
+              >This field is required</span
+            >
+          </fieldset>
+        </section>
+        <section class="consent">
+          <fieldset>
+            <div class="consentText d-flex align-items-center">
+              <input
+                type="checkbox"
+                id="consent"
+                class="me-3"
+                aria-required="true"
+                aria-describedby="consentError"
+                required
+              />
+              <label for="consent"
+                >I consent to being contacted by the team<span
+                  class="required ms-2"
+                  >*</span
+                ></label
+              >
+            </div>
+            <p class="error" id="consentError" aria-live="assertive">
+              To submit this form, please consent to being contacted
+            </p>
+          </fieldset>
+        </section>
+        <button
+          id="submit"
+          type="submit"
+          class="submit"
+          aria-label="submit form"
+        >
+          Submit
+        </button>
+      </form>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

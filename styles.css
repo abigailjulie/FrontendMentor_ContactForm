@@ -1,0 +1,246 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+:root {
+  /* Primary */
+  --Green-200-lighter: hsl(148, 38%, 91%);
+  --Green-600-medium: hsl(169, 82%, 27%);
+  --Red: hsl(0, 66%, 54%);
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Grey-500-medium: hsl(186, 15%, 59%);
+  --Grey-900-darker: hsl(187, 24%, 22%);
+  /* Font */
+  --Label-size: 16px;
+  --ft-weight-light: 400;
+  --ft-weight-heavy: 700;
+  --ft-family: "Karla", serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Green-200-lighter);
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 1rem;
+  background-color: var(--White);
+  border-radius: 1rem;
+  font-size: var(--Label-size);
+  font-family: var(--ft-family);
+}
+
+.title {
+  font-weight: var(--ft-weight-heavy);
+  margin-bottom: 1.5rem;
+}
+
+.required {
+  color: var(--Green-600-medium);
+}
+
+section {
+  margin: 1.5rem 0;
+}
+
+.input,
+textarea {
+  line-height: 2.7rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 0.05rem solid black;
+  padding: 0 1rem;
+}
+
+
+textarea {
+  border-radius: 0.5rem;
+}
+
+.input:focus,
+textarea:focus,
+.queryInput:focus {
+  border: 0.1rem solid var(--Green-600-medium);
+  background-color: white;
+}
+
+.input:hover,
+.queryInput:hover,
+.consentText,
+.submit {
+  cursor: pointer;
+}
+
+.label {
+  font-size: var(--Label-size);
+  margin-bottom: 0.7rem;
+}
+
+.queryInput {
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  border: 0.05rem solid black;
+}
+
+.queryInput.selected {
+  background-color: var(--Green-200-lighter);
+  border: 0.05rem solid var(--Green-600-medium);
+}
+
+.selected {
+  border: .05rem solid var(--Green-600-medium);
+}
+
+.consent {
+  margin: 2rem 1rem 2rem 0;
+}
+
+.submit {
+  background-color: var(--Green-600-medium);
+  width: 100%;
+  line-height: 2rem;
+  border: none;
+  border-radius: 0.4rem;
+  color: var(--White);
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: var(--ft-weight-light);
+}
+
+/* Error */
+.error {
+  display: none;
+  color: var(--Red);
+  margin-top: 0.5rem;
+}
+
+/* Success */
+
+.success {
+  background-color: var(--Grey-900-darker);
+  color: var(--Green-200-lighter);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.success h2 {
+  font-weight: var(--ft-weight-heavy);
+  font-size: var(--Label-size);
+}
+
+.success header {
+  margin-bottom: 0.8rem;
+}
+
+.success p {
+  font-size: 0.8rem;
+}
+
+/* For Desktop */
+@media (min-width: 376px) {
+  .container {
+    max-width: 50rem;
+  }
+
+  .name,
+  .queryTypes {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .name section,
+  .queryInputs section {
+    width: 23rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
